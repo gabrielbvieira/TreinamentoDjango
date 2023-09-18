@@ -1,7 +1,10 @@
 from django.shortcuts import render
 
 def index(request):
-    return render(request, 'index.html')
+    context = {
+        'curso': 'Treinamento Django'
+    }
+    return render(request, 'index.html', context)
 
 def contato(request):
     return render(request, 'contato.html')
