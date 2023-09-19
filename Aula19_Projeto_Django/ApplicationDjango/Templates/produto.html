@@ -2,28 +2,30 @@
 <html lang = "pt-br">
 <Head>
     <meta charset="UTF-8">
-    <title>Application Django - Index</title>
+    <title>Application Django - Contato</title>
 </Head>
 <body>
-    <h2>Index</h2>
-
-    <h2>{{curso}}</h2>
+    <h2>Produto</h2>
 
     <table>
         <thead>
             <tr>
                 <th>Produto</th>
                 <th>Preço</th>
+                <th>Estoque</th>
             </tr>
         </thead>
         <tbody>
-        {% for produto in produtos %}
             <tr>
-                <td><a href="{% url 'produto' produto.id%}">{{produto.nome}}</a></td>
+                <td>{{produto.nome}}</td>
                 <td>{{produto.preco}}</td>
+                <td>{{produto.estoque}}</td>
             </tr>
-        {% endfor %}
         </tbody>
     </table>
+    <a href="{% url 'index'%}">
+        <button>Voltar</button>
+    </a>
+
 </body>
 </html>
